@@ -6,4 +6,16 @@ Chai Page
 
 {% block content %}
 <h1>This is chai page</h1>
+{% for chai in chais %}
+    <div class="chai-item">
+        <img src="{{chai.image}}" alt="img">
+        <h3>{{chai.name}}</h3>
+        <h3>{{chai.date}}</h3>
+        <h3>{{chai.description}}</h3>
+        <a href="{% url 'chai_detail' chai.id%}">
+            <button type="button">{{chai.type}}-{{chai.id}}</button>
+        </a>
+    </div>
+{% endfor %}
 {% endblock %}
+
